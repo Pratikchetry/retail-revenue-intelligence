@@ -2,7 +2,7 @@
 
 # 🏪 Retail Revenue Intelligence & Anomaly Detection
 
-### End-to-End Analytics System for Revenue Monitoring, Customer Segmentation, and AI-Driven Insights
+### End-to-End Analytics System for Revenue Monitoring, Customer Segmentation, Forecasting, and AI-Driven Insights
 
 <br>
 
@@ -27,10 +27,11 @@ This project is being built to create a retail analytics system that helps a bus
 - understand revenue performance over time
 - detect unusual sales patterns
 - identify high-value and at-risk customers
+- forecast future revenue trends
 - support dashboard reporting through a central PostgreSQL data layer
 - connect the same cleaned data system to Tableau and Power BI
 
-The project uses the **Online Retail II** dataset as the core transaction source and is being developed step by step using a senior data analyst workflow.
+The project currently uses the **Online Retail II** dataset as the core transaction source and is being developed step by step using a senior data analyst workflow.
 
 ---
 
@@ -44,6 +45,7 @@ The system is being designed to answer questions such as:
 - Which customers are most valuable?
 - Which customers may become inactive or at risk?
 - How can one central data layer support both Tableau and Power BI workflows?
+- How can forecasting and external enrichment improve business planning?
 
 ---
 
@@ -79,3 +81,87 @@ retail-revenue-intelligence/
 ├── .gitignore
 ├── README.md
 └── requirements.txt
+
+## 🔄 Planned Extension After Core Dashboard Completion
+
+After completing the main pipeline and dashboard using the **Online Retail II** dataset, the project will be extended with two additional datasets to make the solution stronger and more realistic from a senior data analyst perspective.
+
+### 1. Rossmann Store Sales (Kaggle)
+This dataset will be added as an **extension module** after the core Online Retail dashboard is complete.
+
+#### Why it will be added
+The Online Retail II dataset is strong for:
+- revenue analysis
+- customer segmentation
+- anomaly detection
+- product and country analysis
+
+But it is limited for:
+- store-level time-series forecasting
+- promotion effect analysis
+- holiday-driven performance analysis
+
+Rossmann will be used to strengthen those areas.
+
+#### What we will do with Rossmann
+- build a stronger **forecasting workflow**
+- perform **store-level trend modeling**
+- analyze the impact of **promotions**
+- analyze the effect of **holidays and seasonality**
+- compare forecasting patterns with the Online Retail II core analysis
+
+#### Why it matters
+This will make the project more complete by showing both:
+- transaction-level retail intelligence
+- store-level retail forecasting and operational analysis
+
+---
+
+### 2. NOAA Climate Data
+NOAA weather data will be added after the Rossmann extension if weather enrichment is needed.
+
+#### Why it will be added
+Weather can influence time-series retail behavior in some business scenarios. Adding NOAA data will help demonstrate external feature enrichment.
+
+#### What we will do with NOAA
+- enrich time-series datasets with **weather variables**
+- test whether weather patterns align with **sales movement**
+- support **weather-linked revenue pattern exploration**
+- improve business storytelling around external drivers
+
+#### Why it matters
+This will show how external data can be blended into a retail analytics workflow, which is a strong senior-level analytics skill.
+
+---
+
+## 🧩 Final Project Roadmap
+
+### Phase 1 — Core Online Retail II Pipeline
+- raw data understanding
+- data cleaning
+- EDA
+- PostgreSQL integration
+- RFM segmentation
+- anomaly detection
+- forecasting
+- validation
+- Tableau dashboard
+- Power BI / DAX companion
+
+### Phase 2 — Rossmann Extension
+- store-level forecasting
+- promotion analysis
+- holiday effect analysis
+- stronger time-series modeling
+
+### Phase 3 — NOAA Enrichment
+- weather-based feature enrichment
+- external-factor exploration
+- weather-linked sales pattern analysis
+
+---
+
+## 📌 Important Note
+The **Online Retail II dataset** is the main core project and will be completed first.
+
+The **Rossmann** and **NOAA** datasets will be added afterward as advanced extension layers to strengthen forecasting, store-level analysis, and external-factor business interpretation.
