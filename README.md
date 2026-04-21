@@ -60,28 +60,6 @@ The system is being designed to answer questions such as:
 - **statsmodels** — forecasting
 
 ---
-
-## 📂 Current Project Structure
-
-```bash
-retail-revenue-intelligence/
-├── data/
-│   ├── raw/
-│   ├── processed/
-│   └── exports/
-├── docs/
-├── notebooks/
-├── powerbi/
-├── reports/
-├── sql/
-├── src/
-├── tableau/
-├── tests/
-├── .env.example
-├── .gitignore
-├── README.md
-└── requirements.txt
-
 ## 🔄 Planned Extension After Core Dashboard Completion
 
 After completing the main pipeline and dashboard using the **Online Retail II** dataset, the project will be extended with two additional datasets to make the solution stronger and more realistic from a senior data analyst perspective.
@@ -165,3 +143,24 @@ This will show how external data can be blended into a retail analytics workflow
 The **Online Retail II dataset** is the main core project and will be completed first.
 
 The **Rossmann** and **NOAA** datasets will be added afterward as advanced extension layers to strengthen forecasting, store-level analysis, and external-factor business interpretation.
+---
+## 📂 Current Project Structure
+
+```bash
+retail-revenue-intelligence/
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── exports/
+├── docs/
+├── notebooks/
+├── powerbi/
+├── reports/
+├── sql/
+├── src/
+├── tableau/
+├── tests/
+├── .env.example
+├── .gitignore
+├── README.md
+└── requirements.txt
