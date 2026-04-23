@@ -2,7 +2,7 @@
 
 # 🏪 Retail Revenue Intelligence & Anomaly Detection
 
-### End-to-End Analytics System for Revenue Monitoring, Customer Segmentation, Forecasting, and AI-Driven Insights
+### End-to-End Retail Analytics Project with PostgreSQL, Tableau, Power BI, and AI-Ready Extensions
 
 <br>
 
@@ -13,149 +13,151 @@
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Processing-150458?style=for-the-badge&logo=pandas)
 ![scikit--learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?style=for-the-badge&logo=scikitlearn)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter)
-![EDA](https://img.shields.io/badge/EDA-Completed-4CAF50?style=for-the-badge)
-![Data%20Cleaning](https://img.shields.io/badge/Data%20Cleaning-Completed-00C853?style=for-the-badge)
 
 </div>
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
-This project is being built to create a retail analytics system that helps a business:
+This project builds a retail analytics system from the **Online Retail II** dataset and is designed to answer four business questions:
 
-- understand revenue performance over time
-- detect unusual sales patterns
-- identify high-value and at-risk customers
-- forecast future revenue trends
-- support dashboard reporting through a central PostgreSQL data layer
-- connect the same cleaned data system to Tableau and Power BI
+1. **What happened?**  
+   Revenue trends, country concentration, product performance, and sales structure
 
-The project currently uses the **Online Retail II** dataset as the core transaction source and is being developed step by step using a senior data analyst workflow.
+2. **Why did it happen?**  
+   Returns, adjustments, merchandise vs non-merchandise logic, and customer concentration
 
----
+3. **What should be monitored next?**  
+   Customer segmentation, anomaly detection, and time-series behavior
 
-## 🎯 Project Goals
-
-The system is being designed to answer questions such as:
-
-- How is revenue changing over time?
-- Which countries and products contribute the most revenue?
-- Where do unusual spikes or drops occur?
-- Which customers are most valuable?
-- Which customers may become inactive or at risk?
-- How can one central data layer support both Tableau and Power BI workflows?
-- How can forecasting and external enrichment improve business planning?
+4. **How should reporting be built correctly?**  
+   Through a validated PostgreSQL data layer connected to Tableau and supported by Power BI / DAX
 
 ---
 
-## 🧱 Tech Stack
+## Current Project Status
 
-- **Python** — data loading, cleaning, EDA, ML workflows
-- **PostgreSQL** — central data layer / warehouse
-- **Tableau** — dashboard and business reporting
-- **Power BI / DAX** — companion KPI and semantic modeling showcase
-- **Jupyter Notebooks** — step-by-step project development
-- **scikit-learn** — anomaly detection
-- **statsmodels** — forecasting
+### Completed
+- Raw data profiling
+- Data cleaning
+- Cleaning audit logging
+- Exploratory data analysis
+- Non-merchandise code identification
+- PostgreSQL installation and initial schema work
 
----
-## 🔄 Planned Extension After Core Dashboard Completion
+### Current permanent data layers
+- Raw source workbook
+- Staging sales/returns/adjustments files
+- Profiling and cleaning report artifacts
 
-After completing the main pipeline and dashboard using the **Online Retail II** dataset, the project will be extended with two additional datasets to make the solution stronger and more realistic from a senior data analyst perspective.
-
-### 1. Rossmann Store Sales (Kaggle)
-This dataset will be added as an **extension module** after the core Online Retail dashboard is complete.
-
-#### Why it will be added
-The Online Retail II dataset is strong for:
-- revenue analysis
-- customer segmentation
-- anomaly detection
-- product and country analysis
-
-But it is limited for:
-- store-level time-series forecasting
-- promotion effect analysis
-- holiday-driven performance analysis
-
-Rossmann will be used to strengthen those areas.
-
-#### What we will do with Rossmann
-- build a stronger **forecasting workflow**
-- perform **store-level trend modeling**
-- analyze the impact of **promotions**
-- analyze the effect of **holidays and seasonality**
-- compare forecasting patterns with the Online Retail II core analysis
-
-#### Why it matters
-This will make the project more complete by showing both:
-- transaction-level retail intelligence
-- store-level retail forecasting and operational analysis
-
----
-
-### 2. NOAA Climate Data
-NOAA weather data will be added after the Rossmann extension if weather enrichment is needed.
-
-#### Why it will be added
-Weather can influence time-series retail behavior in some business scenarios. Adding NOAA data will help demonstrate external feature enrichment.
-
-#### What we will do with NOAA
-- enrich time-series datasets with **weather variables**
-- test whether weather patterns align with **sales movement**
-- support **weather-linked revenue pattern exploration**
-- improve business storytelling around external drivers
-
-#### Why it matters
-This will show how external data can be blended into a retail analytics workflow, which is a strong senior-level analytics skill.
-
----
-
-## 🧩 Final Project Roadmap
-
-### Phase 1 — Core Online Retail II Pipeline
-- raw data understanding
-- data cleaning
-- EDA
-- PostgreSQL integration
+### Next
+- PostgreSQL loader rewrite using staging files only
+- Post-load validation against benchmark numbers
+- SQL views
 - RFM segmentation
-- anomaly detection
-- forecasting
-- validation
+- Anomaly detection
+- Forecasting
 - Tableau dashboard
 - Power BI / DAX companion
-
-### Phase 2 — Rossmann Extension
-- store-level forecasting
-- promotion analysis
-- holiday effect analysis
-- stronger time-series modeling
-
-### Phase 3 — NOAA Enrichment
-- weather-based feature enrichment
-- external-factor exploration
-- weather-linked sales pattern analysis
+- Later extension with Rossmann and NOAA data
 
 ---
 
-## 📌 Important Note
-The **Online Retail II dataset** is the main core project and will be completed first.
+## Dataset
 
-The **Rossmann** and **NOAA** datasets will be added afterward as advanced extension layers to strengthen forecasting, store-level analysis, and external-factor business interpretation.
+### Current core dataset
+- **Online Retail II**
+- Two sheets:
+  - `Year 2009-2010`
+  - `Year 2010-2011`
+
+### Source file fingerprint
+- **MD5:** `ed54ccfc5d358481c399cc11d0a244be`
+
 ---
-## 📂 Current Project Structure
 
-```bash
+## Key Findings So Far
+
+### Raw profiling
+- **1,067,371** raw rows
+- **34,335** exact duplicates
+- **243,007** missing customer IDs
+- **4,382** missing descriptions
+- **22,950** negative-quantity rows
+- **5** negative-price rows
+
+### Clean staging sales dataset
+- **1,007,914** valid sales rows
+- **20,476,634.02** total revenue
+- **11,205,149** total quantity sold
+- **40,078** unique invoices
+- **4,917** stock codes
+- **43** countries
+
+### Geographic concentration
+- **United Kingdom revenue:** **17,410,569.69**
+- **UK share of total revenue:** **85.03%**
+
+### Seasonality
+Top revenue months:
+- **November** → **2,968,159.92**
+- **October** → **2,313,165.95**
+- **December** → **2,281,745.01**
+
+### Product interpretation risk
+Confirmed non-merchandise codes:
+- `M` → Manual
+- `DOT` → DOTCOM POSTAGE
+- `POST` → POSTAGE
+
+### Customer concentration
+Customer-linked staging subset:
+- **779,425** rows
+- **5,878** identifiable customers
+
+Top customer:
+- `18102.0` → **580,987.04**
+
+---
+
+## Project Structure
+
+```text
 retail-revenue-intelligence/
 ├── data/
 │   ├── raw/
-│   ├── processed/
-│   └── exports/
+│   │   └── online_retail_ii/
+│   │       └── online_retail_II.xlsx
+│   └── staging/
+│       ├── sales_main.csv
+│       ├── returns_cancellations.csv
+│       ├── accounting_adjustments.csv
+│       └── non_merchandise_codes.csv
+│
 ├── docs/
+│   ├── ABSTRACT.md
+│   ├── ABOUT_THE_ANALYST.md
+│   ├── data_findings.md
+│   ├── HOW_TO_READ_NOTEBOOKS.md
+│   ├── TABLEAU_GUIDE.md
+│   └── validation_benchmarks.md
+│
 ├── notebooks/
+│   ├── 01_data_understanding.ipynb
+│   ├── 02_data_cleaning.ipynb
+│   ├── 03_eda.ipynb
+│   ├── 04_anomaly_detection.ipynb
+│   ├── 05_forecasting.ipynb
+│   ├── 06_rfm_segmentation.ipynb
+│   └── 07_validation.ipynb
+│
+├── outputs/
+│   └── reports/
+│       ├── profiling_summary.json
+│       └── cleaning_audit_log.csv
+│
 ├── powerbi/
-├── reports/
 ├── sql/
 ├── src/
 ├── tableau/
